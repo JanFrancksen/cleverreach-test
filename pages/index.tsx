@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { NextPage } from 'next/types';
 import Container from '../components/Container';
-import Form from '../components/KontaktForm/FormTest';
+import Form from '../components/KontaktForm/Form';
 import Subnav from '../components/Subnav/Subnav';
 import Heading from '../components/Typography/Heading';
 

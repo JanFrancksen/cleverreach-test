@@ -6,21 +6,32 @@ Ein Link zu der Preview ist hier zu finden: [https://cleverreach-test.vercel.app
 
 Meine benötigte Zeit betrug ungefähr 8 Stunden.
 
-## Meine Herangehensweise:
+## Meine Herangehensweise
 
 - NextJS als React Framework
 - TailwindCSS für das Styling
 - ReactHookForm für performante Form-Validation
 - Zod als Typescript Form Resolver
 - React-Signature-Canvas für die Integration des Unterschriften-Feldes
+- Die Navigationsleisten dienen aktuell nur der Dekoration und haben keine hinterlegte Funktion.
 
-## Ziel:
+## Ziel
 
 Da ich mich in diesem Projekt nur auf das Frontend bezogen habe, habe ich die verarbeiteten Daten einfach in einem neuen Route ausgegeben, nachdem man das Formular absendet. Dazwischen könnte man einen Datenbankzugriff schalten, welcher die Daten auf einem Server ablegt. Als Möglichkeit für den Endnutzer das Formular zu abzuspeichern habe ich die CSS Datei für Print optimiert, sodass der Vertrag per Knopfdruck druckbar ist.
 
-## Projekt Testen
+## Weiterführende Gedanken
+
+Wenn ich in der Praxis (weiter) an dem Projekt arbeiten würde, würde ich die Components auslagern und eine UI-Library erstellen um die Components wiederverwendbar zu machen. Ebenfalls würde ich die Typography Components weiter ausarbeiten. Dies ermöglicht die einfache Erstellung von Varianten welche ich dann z.B. in Storybook für jeden Co-Developer gut dokumentiert darstellen kann. In diesem Projekt ist dies bisher einfach mit globalen Tailwind Klassen gelöst welche in der globals.scss Datei mit der @apply rule deklariert werden.
+
+## Projekt testen
 
 Gerne kannst du das Projekt klonen und die Funktionen auf Herz und Nieren testen.
+
+Projekt Initialisieren
+
+```bash
+npm install
+```
 
 Development Server
 

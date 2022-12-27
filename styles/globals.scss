@@ -30,12 +30,12 @@ body {
 }
 
 .Content {
+  @apply overflow-y-scroll;
   grid-area: Content;
-  overflow-y: scroll;
 }
 
 .Content::-webkit-scrollbar {
-  width: 10px;
+  @apply w-2;
 }
 
 .Content::-webkit-scrollbar-thumb {

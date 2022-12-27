@@ -69,7 +69,7 @@ const FormTest = () => {
         <a
           href="/AV_Vertrag.pdf"
           download="AV_Vertrag.pdf"
-          className="my-2 inline-block w-full rounded-md bg-orange-400 p-4 text-left transition-transform hover:scale-[101%]">
+          className="inline-block w-full rounded-md bg-orange-400 p-4 text-left transition-transform hover:scale-[101%]">
           Zudem können Sie den Mustervertrag hier als PDF downloaden
         </a>
         <label htmlFor="verarbeitungsGegenstand" className="formLabel">
@@ -224,7 +224,7 @@ const FormTest = () => {
           )}
         </label>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-x-4">
           <div className="formLabelWrap col-span-2">
             <Heading
               size="lg"
@@ -266,7 +266,7 @@ const FormTest = () => {
             {errors.funktion && <p>{errors.funktion?.message}</p>}
           </label>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-x-4">
           <div className="formLabelWrap col-span-2 flex items-baseline">
             <Heading title="Digital unterschreiben" size="lg" tag="h3" bold />
             <span className="formLabelSpan">
