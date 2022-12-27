@@ -11,8 +11,8 @@ const FormTest = () => {
   const router = useRouter();
 
   const schema = z.object({
-    verarbeitungsGegenstand: z.string().min(2),
-    verarbeitungsArtUndZweck: z.string().min(2),
+    verarbeitungsGegenstand: z.string().min(1, { message: 'Pflichtfeld' }),
+    verarbeitungsArtUndZweck: z.string().min(2, { message: 'Pflichtfeld' }),
     personenstammdaten: z.boolean(),
     kommunikationsdaten: z.boolean(),
     vertragsstammdaten: z.boolean(),
@@ -21,10 +21,10 @@ const FormTest = () => {
     kundenUndInteressierte: z.boolean(),
     mitarbeiterUndLieferanten: z.boolean(),
     sonstigeBetroffene: z.boolean(),
-    firstName: z.string().min(2),
-    lastName: z.string().min(2),
-    funktion: z.string().min(2),
-    ort: z.string().min(2),
+    firstName: z.string().min(2, { message: 'Pflichtfeld' }),
+    lastName: z.string().min(2, { message: 'Pflichtfeld' }),
+    funktion: z.string().min(2, { message: 'Pflichtfeld' }),
+    ort: z.string().min(2, { message: 'Pflichtfeld' }),
     datum: z.string(),
   });
 
