@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-hidden bg-gray-100;
+}
+
+.AppLayout {
+  @apply grid;
+  grid-template-columns: 4vw 96vw;
+  grid-template-rows: 4vw calc(100vh - 4vw);
+  grid-template-areas:
+    'Sidebar Navbar'
+    'Sidebar Content';
+
+  @media print {
+    @apply h-full w-full;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.Sidebar {
+  grid-area: Sidebar;
+}
+
+.Navbar {
+  grid-area: Navbar;
+}
+
+.Content {
+  grid-area: Content;
+  overflow-y: scroll;
+}
+
+.Content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.Content::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-orange-400;
+}
+
+.ContentContainer {
+  width: min(100%, 1000px);
+}
+
+.inputWrap {
+  @apply mb-4 flex flex-col gap-2;
+}
+
+.formLabel {
+  @apply flex flex-col text-gray-700;
+}
+
+.formLabelWrap {
+  @apply mt-4 mb-1 flex items-baseline;
+}
+
+.formLabelSpan {
+  @apply font-light text-gray-300;
+}
+
+input[type='text'],
+input[type='date'],
+textarea {
+  @apply rounded p-2 ring-1 ring-gray-300 invalid:border-pink-500 invalid:text-pink-600 focus:outline-none focus:ring-orange-400 focus:invalid:border-pink-500 focus:invalid:ring-pink-500;
+}
+
+.inputCheckbox {
+  @apply mr-2 h-6 w-6 border-gray-400 outline-none;
+}
+
+.button {
+  @apply cursor-pointer rounded-md bg-orange-400 px-4 py-2 text-white transition-colors hover:bg-orange-500;
+}
+
+.checkboxWrap {
+  @apply flex items-center gap-2;
+}

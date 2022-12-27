@@ -1,3 +1,64 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "prettier"
+  ],
+  "ignorePatterns": ["!**/*", ".next/**/*"],
+  "plugins": ["import"],
+  "parserOptions": {
+    "project": "./tsconfig.base.json"
+  },
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "import/extensions": "off",
+        "import/prefer-default-export": "off",
+        "react/function-component-definition": [
+          2,
+          { "namedComponents": "arrow-function" }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+          1,
+          { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+        ],
+        "react/jsx-props-no-spreading": "off"
+        // "prettier/prettier": "off",
+        // "@typescript-eslint/unbound-method": "off"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off"
+  },
+  "env": {
+    "jest": true
+  }
 }
