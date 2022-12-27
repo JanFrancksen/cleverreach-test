@@ -8,8 +8,8 @@ body {
 
 .AppLayout {
   @apply grid;
-  grid-template-columns: 4vw 96vw;
-  grid-template-rows: 4vw calc(100vh - 4vw);
+  grid-template-columns: max(4vw, 40px) 96vw;
+  grid-template-rows: max(4vw, 40px) calc(100vh - 4vw);
   grid-template-areas:
     'Sidebar Navbar'
     'Sidebar Content';
@@ -34,11 +34,11 @@ body {
   grid-area: Content;
 }
 
-.Content::-webkit-scrollbar {
-  @apply w-2;
+*::-webkit-scrollbar {
+  @apply h-1 w-2;
 }
 
-.Content::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   @apply rounded-full bg-orange-400;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .formLabelWrap {
-  @apply mt-4 mb-1 flex items-baseline;
+  @apply mt-4 mb-1 flex flex-col items-baseline md:flex-row;
 }
 
 .formLabelSpan {

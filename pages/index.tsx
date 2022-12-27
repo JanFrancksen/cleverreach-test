@@ -70,7 +70,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="Content">
         <div className="ContentContainer mx-auto my-20">
-          <div className="flex items-baseline justify-between border-b">
+          <div className="items-baseline justify-between border-b p-2 lg:flex">
             <Heading title="Account Settings" size="5xl" tag="h1" />
             <Subnav data={accountSettingsNav} />
           </div>

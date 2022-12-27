@@ -109,7 +109,7 @@ const Avvertrag = ({ formData }: FormValues) => (
           tag="h2"
           bold
         />
-        <div className="mb-6 grid grid-cols-2">
+        <div className="mb-6">
           <p>Vorname: {formData?.firstName}</p>
           <p>Nachname: {formData?.lastName}</p>
           <p>Funktion: {formData?.funktion}</p>
@@ -129,7 +129,7 @@ const Avvertrag = ({ formData }: FormValues) => (
 
         <div className="mb-6 flex gap-2 print:hidden">
           <Button href="/">zurück zum Formular</Button>
-          <Button onClick={() => window.print()}>drucken</Button>
+          <Button onClick={() => window.print()}>PDF | Drucken</Button>
         </div>
       </Container>
     </div>

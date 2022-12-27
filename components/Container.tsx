@@ -5,7 +5,7 @@ type ContainerProps = {
 };
 
 const Container = ({ children }: ContainerProps) => (
-  <section className="px-12 pt-20 print:w-full">{children}</section>
+  <section className="px-2 print:w-full lg:px-12 lg:pt-20">{children}</section>
 );
 
 export default Container;
