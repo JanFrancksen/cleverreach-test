@@ -224,8 +224,8 @@ const FormTest = () => {
           )}
         </label>
 
-        <div className="grid grid-cols-2 gap-x-4">
-          <div className="formLabelWrap col-span-2">
+        <div className="grid gap-x-4 md:grid-cols-2">
+          <div className="formLabelWrap md:col-span-2">
             <Heading
               size="lg"
               tag="h3"
@@ -266,8 +266,8 @@ const FormTest = () => {
             {errors.funktion && <p>{errors.funktion?.message}</p>}
           </label>
         </div>
-        <div className="grid grid-cols-2 gap-x-4">
-          <div className="formLabelWrap col-span-2 flex items-baseline">
+        <div className="grid gap-x-4 md:grid-cols-2">
+          <div className="formLabelWrap flex items-baseline md:col-span-2">
             <Heading title="Digital unterschreiben" size="lg" tag="h3" bold />
             <span className="formLabelSpan">
               &nbsp;(bitte ergänzen, falls notwendig)
