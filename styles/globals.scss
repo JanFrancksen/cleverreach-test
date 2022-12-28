@@ -43,7 +43,8 @@ body {
 }
 
 .ContentContainer {
-  width: min(100%, 1000px);
+  @apply mx-auto;
+  width: min(99%, 1000px);
 }
 
 .inputWrap {

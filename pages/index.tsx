@@ -69,8 +69,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="Content">
-        <div className="ContentContainer mx-auto my-20">
-          <div className="items-baseline justify-between border-b p-2 lg:flex">
+        <div className="ContentContainer mx-auto lg:my-20">
+          <div className="mb-4 items-baseline justify-between border-b px-4 lg:flex">
             <Heading title="Account Settings" size="5xl" tag="h1" />
             <Subnav data={accountSettingsNav} />
           </div>

@@ -297,10 +297,10 @@ const FormTest = () => {
           <span className="formLabelSpan">&nbsp;(per Maus oder Touch)</span>
         </div>
 
-        <div className="h-[200px] w-[400px] rounded bg-gray-200">
+        <div className="h-[200px] max-w-[400px] rounded bg-gray-200">
           <SignatureCanvas
             minDistance={5}
-            canvasProps={{ width: 400, height: 200 }}
+            canvasProps={{ className: 'w-full' }}
             ref={canvasRef}
           />
         </div>
