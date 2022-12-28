@@ -88,7 +88,7 @@ const FormTest = () => {
             {...register('verarbeitungsGegenstand')}
             defaultValue="Bereitstellung der CleverReach-Software für den E-Mail-Versand/- Auswertung durch die Auftraggeberin."
             className="inputText"
-            rows={3}
+            rows={4}
           />
           {errors.verarbeitungsGegenstand && (
             <p>{errors.verarbeitungsGegenstand?.message}</p>
@@ -110,7 +110,7 @@ const FormTest = () => {
             {...register('verarbeitungsArtUndZweck')}
             defaultValue="Erhebung, Speicherung, Nutzung und Übermittlung von Account-Daten der Auftraggeberin. Speicherung und Übermittlung von Empfängerdaten zum Zweck der Zusendung/Auswertung von E-Mails."
             className="inputText"
-            rows={3}
+            rows={4}
           />
           {errors.verarbeitungsArtUndZweck && (
             <p>{errors.verarbeitungsArtUndZweck?.message}</p>
@@ -313,7 +313,7 @@ const FormTest = () => {
       </div>
       <input
         type="submit"
-        value="submit"
+        value="Jetzt AV erstellen"
         className="cursor-pointer self-end rounded bg-orange-400 py-2 px-4 text-white"
       />
     </form>
