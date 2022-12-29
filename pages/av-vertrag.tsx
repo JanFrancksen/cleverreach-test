@@ -36,7 +36,7 @@ const Avvertrag = ({ formData }: FormValuesNew) => (
             tag="h2"
             bold
           />
-          <p className="mb-6">{formData.schema.verarbeitungsGegenstand}</p>
+          <p className="mb-6">{formData.schema?.verarbeitungsGegenstand}</p>
 
           <Heading
             title="Art und Zweck der Verarbeitung"
@@ -44,7 +44,7 @@ const Avvertrag = ({ formData }: FormValuesNew) => (
             tag="h2"
             bold
           />
-          <p className="mb-6">{formData.schema.verarbeitungsArtUndZweck}</p>
+          <p className="mb-6">{formData.schema?.verarbeitungsArtUndZweck}</p>
 
           <Heading
             title="Art der personenbezogenen Daten"
@@ -53,16 +53,16 @@ const Avvertrag = ({ formData }: FormValuesNew) => (
             bold
           />
           <ul className="mb-6 list-disc">
-            {formData.schema.personenstammdaten.toString().toLowerCase() ===
+            {formData.schema?.personenstammdaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">Personenstammdaten</li>}
 
-            {formData.schema.kommunikationsdaten.toString().toLowerCase() ===
+            {formData.schema?.kommunikationsdaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">Kommunikationsdaten</li>}
-            {formData.schema.vertragsstammdaten.toString().toLowerCase() ===
+            {formData.schema?.vertragsstammdaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">Vertragsstammdaten</li>}
-            {formData.schema.protokolldaten.toString().toLowerCase() ===
+            {formData.schema?.protokolldaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">Protokolldaten</li>}
-            {formData.schema.sonstigeDaten.toString().toLowerCase() ===
+            {formData.schema?.sonstigeDaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">sonstige Daten</li>}
           </ul>
 
@@ -73,21 +73,22 @@ const Avvertrag = ({ formData }: FormValuesNew) => (
             bold
           />
           <ul className="mb-6 list-disc">
-            {formData.schema.kundenUndInteressierte.toString().toLowerCase() ===
-              'true' && (
+            {formData.schema?.kundenUndInteressierte
+              .toString()
+              .toLowerCase() === 'true' && (
               <li className="ml-8">
                 Kunden und Interessenten des Auftraggebers
               </li>
             )}
 
-            {formData.schema.mitarbeiterUndLieferanten
+            {formData.schema?.mitarbeiterUndLieferanten
               .toString()
               .toLowerCase() === 'true' && (
               <li className="ml-8">
                 Mitarbeiter und Lieferanten des Auftraggebers
               </li>
             )}
-            {formData.schema.sonstigeBetroffene.toString().toLowerCase() ===
+            {formData.schema?.sonstigeBetroffene.toString().toLowerCase() ===
               'true' && <li className="ml-8">Sonstiges</li>}
           </ul>
           <Heading
@@ -97,9 +98,9 @@ const Avvertrag = ({ formData }: FormValuesNew) => (
             bold
           />
           <div className="mb-6">
-            <p>Vorname: {formData.schema.firstName}</p>
-            <p>Nachname: {formData.schema.lastName}</p>
-            <p>Funktion: {formData.schema.funktion}</p>
+            <p>Vorname: {formData.schema?.firstName}</p>
+            <p>Nachname: {formData.schema?.lastName}</p>
+            <p>Funktion: {formData.schema?.funktion}</p>
           </div>
 
           <Heading title="Unterschrift" size="xl" tag="h2" bold />
@@ -110,8 +111,8 @@ const Avvertrag = ({ formData }: FormValuesNew) => (
             height={100}
           />
           <div className="flex gap-4">
-            <p>Ort: {formData.schema.ort}</p>
-            <p>Datum: {formData.schema.datum}</p>
+            <p>Ort: {formData.schema?.ort}</p>
+            <p>Datum: {formData.schema?.datum}</p>
           </div>
 
           <div className="my-6 flex gap-2 print:hidden">
