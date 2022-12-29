@@ -19,10 +19,8 @@ export const schema = z.object({
 });
 
 const newSchema = z.object({
-  formData: z.object({
-    schema,
-    signatureData: z.string(),
-  }),
+  formData: schema,
+  signatureData: z.string(),
 });
 
 export type FormValues = z.infer<typeof schema>;
