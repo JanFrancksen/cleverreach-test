@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import Button from '../components/Button';
 import Container from '../components/Container';
+import { FormValuesNew } from '../components/KontaktForm/FormSchema';
 import Heading from '../components/Typography/Heading';
 
 export const getServerSideProps: GetServerSideProps = async context => {
@@ -13,29 +14,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
   };
 };
 
-type FormValues = {
-  formData: {
-    verarbeitungsGegenstand: string;
-    verarbeitungsArtUndZweck: string;
-    personenstammdaten: boolean;
-    kommunikationsdaten: boolean;
-    vertragsstammdaten: boolean;
-    protokolldaten: boolean;
-    sonstigeDaten: boolean;
-    kundenUndInteressierte: boolean;
-    mitarbeiterUndLieferanten: boolean;
-    sonstigeBetroffene: boolean;
-    firstName: string;
-    lastName: string;
-    funktion: string;
-    ort: string;
-    datum: string;
-    signatureData: string;
-  };
-};
-
-const Avvertrag = ({ formData }: FormValues) => (
-  <main className="Content">
+const Avvertrag = ({ formData }: FormValuesNew) => (
+  <section className="content">
     <div className="ContentContainer mx-auto print:my-0 ">
       <Container>
         <div className="rounded bg-white p-4 shadow-md print:bg-transparent print:shadow-none">
@@ -56,7 +36,7 @@ const Avvertrag = ({ formData }: FormValues) => (
             tag="h2"
             bold
           />
-          <p className="mb-6">{formData?.verarbeitungsGegenstand}</p>
+          <p className="mb-6">{formData.schema.verarbeitungsGegenstand}</p>
 
           <Heading
             title="Art und Zweck der Verarbeitung"
@@ -64,7 +44,7 @@ const Avvertrag = ({ formData }: FormValues) => (
             tag="h2"
             bold
           />
-          <p className="mb-6">{formData?.verarbeitungsArtUndZweck}</p>
+          <p className="mb-6">{formData.schema.verarbeitungsArtUndZweck}</p>
 
           <Heading
             title="Art der personenbezogenen Daten"
@@ -73,19 +53,17 @@ const Avvertrag = ({ formData }: FormValues) => (
             bold
           />
           <ul className="mb-6 list-disc">
-            {formData.personenstammdaten.toString().toLowerCase() ===
+            {formData.schema.personenstammdaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">Personenstammdaten</li>}
 
-            {formData.kommunikationsdaten.toString().toLowerCase() ===
+            {formData.schema.kommunikationsdaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">Kommunikationsdaten</li>}
-            {formData.vertragsstammdaten.toString().toLowerCase() ===
+            {formData.schema.vertragsstammdaten.toString().toLowerCase() ===
               'true' && <li className="ml-8">Vertragsstammdaten</li>}
-            {formData.protokolldaten.toString().toLowerCase() === 'true' && (
-              <li className="ml-8">Protokolldaten</li>
-            )}
-            {formData.sonstigeDaten.toString().toLowerCase() === 'true' && (
-              <li className="ml-8">sonstige Daten</li>
-            )}
+            {formData.schema.protokolldaten.toString().toLowerCase() ===
+              'true' && <li className="ml-8">Protokolldaten</li>}
+            {formData.schema.sonstigeDaten.toString().toLowerCase() ===
+              'true' && <li className="ml-8">sonstige Daten</li>}
           </ul>
 
           <Heading
@@ -95,20 +73,21 @@ const Avvertrag = ({ formData }: FormValues) => (
             bold
           />
           <ul className="mb-6 list-disc">
-            {formData.kundenUndInteressierte.toString().toLowerCase() ===
+            {formData.schema.kundenUndInteressierte.toString().toLowerCase() ===
               'true' && (
               <li className="ml-8">
                 Kunden und Interessenten des Auftraggebers
               </li>
             )}
 
-            {formData.mitarbeiterUndLieferanten.toString().toLowerCase() ===
-              'true' && (
+            {formData.schema.mitarbeiterUndLieferanten
+              .toString()
+              .toLowerCase() === 'true' && (
               <li className="ml-8">
                 Mitarbeiter und Lieferanten des Auftraggebers
               </li>
             )}
-            {formData.sonstigeBetroffene.toString().toLowerCase() ===
+            {formData.schema.sonstigeBetroffene.toString().toLowerCase() ===
               'true' && <li className="ml-8">Sonstiges</li>}
           </ul>
           <Heading
@@ -118,21 +97,21 @@ const Avvertrag = ({ formData }: FormValues) => (
             bold
           />
           <div className="mb-6">
-            <p>Vorname: {formData?.firstName}</p>
-            <p>Nachname: {formData?.lastName}</p>
-            <p>Funktion: {formData?.funktion}</p>
+            <p>Vorname: {formData.schema.firstName}</p>
+            <p>Nachname: {formData.schema.lastName}</p>
+            <p>Funktion: {formData.schema.funktion}</p>
           </div>
 
           <Heading title="Unterschrift" size="xl" tag="h2" bold />
           <Image
-            src={formData?.signatureData}
+            src={formData.signatureData}
             alt="Unterschrift"
             width={200}
             height={100}
           />
           <div className="flex gap-4">
-            <p>Ort: {formData?.ort}</p>
-            <p>Datum: {formData?.datum}</p>
+            <p>Ort: {formData.schema.ort}</p>
+            <p>Datum: {formData.schema.datum}</p>
           </div>
 
           <div className="my-6 flex gap-2 print:hidden">
@@ -142,7 +121,7 @@ const Avvertrag = ({ formData }: FormValues) => (
         </div>
       </Container>
     </div>
-  </main>
+  </section>
 );
 
 export default Avvertrag;

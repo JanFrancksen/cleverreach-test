@@ -68,19 +68,18 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="Content">
-        <div className="ContentContainer mx-auto lg:my-20">
+      <section className="content">
+        <div className="ContentContainer">
           <div className="mb-4 items-baseline justify-between border-b px-4 lg:flex">
             <Heading title="Account Settings" size="5xl" tag="h1" />
             <Subnav data={accountSettingsNav} />
           </div>
           <Container>
             <Subnav data={accountSettingsSubNav} />
-
             <Form />
           </Container>
         </div>
-      </main>
+      </section>
     </>
   );
 };

@@ -3,32 +3,12 @@ import { useRouter } from 'next/router';
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import SignatureCanvas from 'react-signature-canvas';
-import * as z from 'zod';
 import Button from '../Button';
 import Heading from '../Typography/Heading';
+import { FormValues, schema } from './FormSchema';
 
 const FormTest = () => {
   const router = useRouter();
-
-  const schema = z.object({
-    verarbeitungsGegenstand: z.string().min(1, { message: 'Pflichtfeld' }),
-    verarbeitungsArtUndZweck: z.string().min(2, { message: 'Pflichtfeld' }),
-    personenstammdaten: z.boolean(),
-    kommunikationsdaten: z.boolean(),
-    vertragsstammdaten: z.boolean(),
-    protokolldaten: z.boolean(),
-    sonstigeDaten: z.boolean(),
-    kundenUndInteressierte: z.boolean(),
-    mitarbeiterUndLieferanten: z.boolean(),
-    sonstigeBetroffene: z.boolean(),
-    firstName: z.string().min(2, { message: 'Pflichtfeld' }),
-    lastName: z.string().min(2, { message: 'Pflichtfeld' }),
-    funktion: z.string().min(2, { message: 'Pflichtfeld' }),
-    ort: z.string().min(2, { message: 'Pflichtfeld' }),
-    datum: z.string(),
-  });
-
-  type FormValues = z.infer<typeof schema>;
 
   const {
     register,
@@ -297,10 +277,10 @@ const FormTest = () => {
           <span className="formLabelSpan">&nbsp;(per Maus oder Touch)</span>
         </div>
 
-        <div className="h-[200px] max-w-[400px] rounded bg-gray-200">
+        <div className="h-[200px] max-w-[400px] overflow-hidden rounded border border-gray-400 bg-gray-200">
           <SignatureCanvas
             minDistance={5}
-            canvasProps={{ className: 'w-full' }}
+            canvasProps={{ className: 'w-full h-full' }}
             ref={canvasRef}
           />
         </div>
@@ -311,10 +291,11 @@ const FormTest = () => {
           <Button onClick={clearCanvas}>zurücksetzen</Button>
         </div>
       </div>
+
       <input
         type="submit"
         value="Jetzt AV erstellen"
-        className="cursor-pointer self-end rounded bg-orange-400 py-2 px-4 text-white"
+        className="cursor-pointer self-end rounded bg-orange-400 py-2 px-4 text-white hover:bg-orange-500"
       />
     </form>
   );
