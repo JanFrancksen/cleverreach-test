@@ -16,10 +16,7 @@ body {
 
   @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
-    grid-template-rows: max(4vw, 40px) calc(100vh - max(8vw, 80px)) max(
-        4vw,
-        40px
-      );
+    grid-template-rows: 7vh 86vh 7vh;
     grid-template-areas:
       'Navbar'
       'Content'
