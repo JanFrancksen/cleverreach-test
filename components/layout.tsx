@@ -1,3 +1,4 @@
+import ContentContainer from '@ui/ContentContainer';
 import React from 'react';
 import Navbar from './Navbar/Navbar';
 import Sidebar from './Sidebar/Sidebar';
@@ -10,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => (
   <main className="AppLayout">
     <Navbar />
     <Sidebar />
-    {children}
+    <ContentContainer>{children}</ContentContainer>
   </main>
 );
 

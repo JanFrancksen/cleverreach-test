@@ -10,14 +10,14 @@ import { SiSpeedtest } from 'react-icons/si';
 import SbIcon from './SbIcon';
 
 const Sidebar = () => (
-  <aside className="Sidebar z-20 bg-slate-900 text-white print:hidden max-md:flex max-md:justify-center">
-    <SbIcon icon={<FaPaperPlane />} primary />
-    <SbIcon icon={<SiSpeedtest />} />
-    <SbIcon icon={<FaUsers />} />
-    <SbIcon icon={<IoMdChatbubbles />} />
-    <SbIcon icon={<FaNewspaper />} />
-    <SbIcon icon={<FaCogs />} />
-    <SbIcon icon={<FaProjectDiagram />} />
+  <aside className="sidebar z-20 bg-slate-900 text-white print:hidden max-md:flex max-md:justify-center">
+    <SbIcon icon={<FaPaperPlane />} primary href="#" />
+    <SbIcon icon={<SiSpeedtest />} href="#" />
+    <SbIcon icon={<FaUsers />} href="#" />
+    <SbIcon icon={<IoMdChatbubbles />} href="#" />
+    <SbIcon icon={<FaNewspaper />} href="#" />
+    <SbIcon icon={<FaCogs />} href="#" />
+    <SbIcon icon={<FaProjectDiagram />} href="#" />
   </aside>
 );
 

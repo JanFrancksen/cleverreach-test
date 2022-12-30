@@ -13,7 +13,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="Navbar z-20 flex w-full items-center justify-end gap-4 bg-white py-2 px-4 shadow-md print:hidden">
+    <header className="navbar z-20 flex w-full items-center justify-end gap-4 bg-white py-2 px-4 shadow-md print:hidden">
       {(activeBell && (
         <div className="group relative">
           <AiFillBell

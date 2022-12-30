@@ -29,34 +29,18 @@ body {
     grid-template-rows: 1fr;
     grid-template-areas: 'Content';
   }
-}
 
-.Sidebar {
-  @apply print:hidden;
-  grid-area: Sidebar;
-
-  & * {
-    @apply print:hidden;
+  .sidebar {
+    grid-area: Sidebar;
   }
-}
 
-.Navbar {
-  @apply print:hidden;
-  grid-area: Navbar;
-
-  & * {
-    @apply print:hidden;
+  .navbar {
+    grid-area: Navbar;
   }
-}
 
-.content {
-  @apply h-full w-full items-center justify-center overflow-y-scroll px-4 py-4 print:m-0 print:p-0 lg:py-20;
-  grid-area: Content;
-}
-
-.ContentContainer {
-  @apply mx-auto print:w-full;
-  width: min(99%, 1000px);
+  .content {
+    grid-area: Content;
+  }
 }
 
 *::-webkit-scrollbar {
@@ -67,6 +51,12 @@ body {
   @apply rounded-full bg-orange-400;
 }
 
+input[type='text'],
+input[type='date'],
+textarea {
+  @apply w-full rounded p-2 ring-1 ring-gray-300 invalid:border-pink-500 invalid:text-pink-600 focus:outline-none focus:ring-orange-400 focus:invalid:border-pink-500 focus:invalid:ring-pink-500;
+}
+/*
 .inputWrap {
   @apply mb-4 flex flex-col gap-2;
 }
@@ -83,11 +73,7 @@ body {
   @apply font-light text-gray-300;
 }
 
-input[type='text'],
-input[type='date'],
-textarea {
-  @apply rounded p-2 ring-1 ring-gray-300 invalid:border-pink-500 invalid:text-pink-600 focus:outline-none focus:ring-orange-400 focus:invalid:border-pink-500 focus:invalid:ring-pink-500;
-}
+
 
 .inputCheckbox {
   @apply mr-2 h-6 w-6 border-gray-400 outline-none;
@@ -100,3 +86,4 @@ textarea {
 .checkboxWrap {
   @apply flex items-center gap-2;
 }
+*/

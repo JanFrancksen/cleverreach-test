@@ -5,6 +5,7 @@ type SubnavProps = {
   data: {
     id: number;
     name: string;
+    href: string;
   }[];
 };
 
@@ -21,7 +22,7 @@ const Subnav = ({ data }: SubnavProps) => {
               ? 'whitespace-nowrap border-b-2 pb-4 text-gray-800 sm:border-orange-400'
               : 'whitespace-nowrap pb-4 text-gray-400 hover:border-b-2 hover:text-gray-800 lg:hover:border-orange-400'
           }>
-          <Link href="/" onClick={() => setActive(item.id)}>
+          <Link href={item.href} onClick={() => setActive(item.id)}>
             {item.name}
           </Link>
         </li>
