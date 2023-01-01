@@ -1,10 +1,10 @@
 # CleverReach Testprojekt!
 
-Das hier ist das Testprojekt für CleverReach. Ziel war es, ein Formular zu erstellen, bei dem der Endnutzer seine Daten eingeben kann und als Resultat ein Vertrag zur Auftragsverarbeitung erstellt wird.
+Das hier ist das Testprojekt für CleverReach. Ziel war es, ein Formular aus einer Vorlage zu realisieren, bei welchem der Endnutzer die nötigen Daten eingeben kann und als Resultat ein Vertrag zur Auftragsverarbeitung erstellt wird.
 
-Ein Link zu der Preview ist hier zu finden: [https://cleverreach-test.vercel.app/](https://cleverreach-test.vercel.app/)
+Ein Link zu meiner Umsetzung ist hier zu finden: [https://cleverreach-test.vercel.app/](https://cleverreach-test.vercel.app/)
 
-Meine benötigte Zeit betrug ungefähr 8 Stunden.
+Meine benötigte Zeit betrug ungefähr 8 Stunden. _Edit (01.01.2023): Da ich zwischen den Feiertagen noch Zeit gefunden habe und mir viele Gedanken zur Verbesserung des Projektes im Kopf schwebten, habe ich noch ein bisschen mehr Zeit investiert um Optimierungen vorzunehmen. Zudem hat es mir einfach sehr viel Freude bereitet an diesem Projekt zu arbeiten._
 
 ## Meine Herangehensweise
 
@@ -21,7 +21,7 @@ Da ich mich in diesem Projekt nur auf das Frontend bezogen habe, habe ich die ve
 
 ## Weiterführende Gedanken
 
-Wenn ich in der Praxis (weiter) an dem Projekt arbeiten würde, würde ich die Components auslagern und eine UI-Library erstellen um die Components wiederverwendbar zu machen. Ebenfalls würde ich die Typography Components weiter ausarbeiten. Dies ermöglicht die einfache Erstellung von Varianten, welche ich dann z.B. in Storybook für jeden Co-Developer gut dokumentiert darstellen kann. In diesem Projekt ist dies bisher einfach mit globalen Tailwind Klassen gelöst, welche in der globals.scss Datei mit der @apply rule deklariert werden.
+Wenn ich in der Praxis (weiter) an dem Projekt arbeiten würde, würde ich die Components auslagern und eine UI-Library erstellen um die Components wiederverwendbar zu machen. Ebenfalls würde ich die Typography Components weiter ausarbeiten. Dies ermöglicht die einfache Erstellung von Varianten, welche ich dann z.B. in Storybook für jeden Co-Developer gut dokumentiert darstellen kann.
 
 ## Projekt testen
 

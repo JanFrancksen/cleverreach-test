@@ -3,24 +3,17 @@
 @tailwind utilities;
 
 body {
-  @apply overflow-hidden bg-gray-100;
+  @apply bg-gray-100 sm:overflow-hidden;
 }
 
 .AppLayout {
-  @apply grid;
-  grid-template-columns: max(4vw, 40px) 96vw;
-  grid-template-rows: max(4vw, 40px) calc(100vh - max(4vw, 40px));
-  grid-template-areas:
-    'Sidebar Navbar'
-    'Sidebar Content';
-
-  @media screen and (max-width: 767px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 7vh 86vh 7vh;
+  @media screen and (min-width: 767px) {
+    display: grid;
+    grid-template-columns: max(4vw, 40px) 96vw;
+    grid-template-rows: max(4vw, 40px) calc(100vh - max(4vw, 40px));
     grid-template-areas:
-      'Navbar'
-      'Content'
-      'Sidebar';
+      'Sidebar Navbar'
+      'Sidebar Content';
   }
 
   @media print {
@@ -31,10 +24,12 @@ body {
   }
 
   .sidebar {
+    @apply max-md:fixed max-md:bottom-0 max-md:h-10 max-md:w-full;
     grid-area: Sidebar;
   }
 
   .navbar {
+    @apply max-md:fixed max-md:top-0;
     grid-area: Navbar;
   }
 
@@ -54,36 +49,5 @@ body {
 input[type='text'],
 input[type='date'],
 textarea {
-  @apply w-full rounded p-2 ring-1 ring-gray-300 invalid:border-pink-500 invalid:text-pink-600 focus:outline-none focus:ring-orange-400 focus:invalid:border-pink-500 focus:invalid:ring-pink-500;
+  @apply w-full rounded border p-2 ring-1 ring-gray-300 invalid:border-pink-500 invalid:text-pink-600 focus:outline-none focus:ring-orange-400 focus:invalid:border-pink-500 focus:invalid:ring-pink-500;
 }
-/*
-.inputWrap {
-  @apply mb-4 flex flex-col gap-2;
-}
-
-.formLabel {
-  @apply flex flex-col text-gray-700;
-}
-
-.formLabelWrap {
-  @apply mt-4 mb-1 flex flex-col items-baseline md:flex-row;
-}
-
-.formLabelSpan {
-  @apply font-light text-gray-300;
-}
-
-
-
-.inputCheckbox {
-  @apply mr-2 h-6 w-6 border-gray-400 outline-none;
-}
-
-.button {
-  @apply cursor-pointer rounded-md bg-orange-400 px-4 py-2 text-white transition-colors hover:bg-orange-500;
-}
-
-.checkboxWrap {
-  @apply flex items-center gap-2;
-}
-*/
