@@ -26,7 +26,7 @@ const InputCheckbox = ({ title, checkboxes }: InputCheckboxProps) => {
             <input
               type="checkbox"
               {...register(checkbox.label)}
-              className="mr-2 h-6 w-6 border-gray-400 outline-none"
+              className="mr-2 h-6 w-6 flex-shrink-0 border-gray-400 outline-none"
             />
             {checkbox.name}
           </label>
